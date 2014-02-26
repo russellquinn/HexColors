@@ -43,7 +43,7 @@
 	}
 	
 	NSScanner *scanner = [NSScanner scannerWithString:hex];
-	NSUInteger tempInt;
+	unsigned int tempInt;
 	[scanner scanHexInt:&tempInt];
 	
 	return OPAQUE_HEXCOLOR(tempInt);
@@ -79,7 +79,7 @@
 	g = MIN(MAX(g, 0.0f), 1.0f);
 	b = MIN(MAX(b, 0.0f), 1.0f);
     
-	NSUInteger hexColor = (((int)roundf(r * 255)) << 16) | (((int)roundf(g * 255)) << 8) | (((int)roundf(b * 255)));
+	unsigned int hexColor = (((int)roundf(r * 255)) << 16) | (((int)roundf(g * 255)) << 8) | (((int)roundf(b * 255)));
     
     return [NSString stringWithFormat:@"%0.6X", hexColor];
 }
